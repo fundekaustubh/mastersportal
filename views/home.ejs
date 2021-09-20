@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MastersPortal</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <%- include('partials/navbar-styles') %>
+</head>
+<%- include('partials/form') %>
+
+    <body>
+        <div class="page-container">
+            <%- include('partials/navbar') %>
+                <main class="main">
+                    <div id="pageHeader">
+                        HERE ARE SOME OF THE COLLEGES THAT HAVE REGISTERED WITH US.
+                    </div>
+                    <% for( let i=0; i < colleges.length; i++) { %>
+                        <section class="card">
+                            <a href="/colleges/<%= i %>/view ">
+                                <div id="cardHeader" class="header1">
+                                    <%= colleges[i].name %>
+                                </div>
+                                <img src="<%= colleges[i].photo %>" alt="No photo exists!">
+                                <footer class="container">
+                                    <%= colleges[i].country %>
+                                </footer>
+                            </a>
+                        </section>
+                        <% } %>
+                </main>
+        </div>
+        <%- include('partials/navbar-script') %>
+            <%- include('partials/contact-window') %>
+    </body>
+
+</html>

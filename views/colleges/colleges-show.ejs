@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MastersPortal</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <%- include('../partials/navbar-styles') %>
+        <style>
+            #pageHeader {
+                text-align: center;
+                margin-bottom: 30px;
+            }
+
+            .page-container {
+                width: 100%;
+            }
+        </style>
+</head>
+<%- include('../partials/form') %>
+
+    <body>
+        <div class="page-container">
+            <%- include('../partials/navbar') %>
+                <main class="main">
+                    <div id="pageHeader">
+                        Here are all the colleges according to your preferences...
+                    </div>
+                    <% if(requiredColleges.length===0) { %>
+                        <div class="header4">YOUR SEARCH DID NOT BRING UP ANY RESULTS :/</div>
+                        <% } else { %>
+                            <% for( let i=0; i < requiredColleges.length; i++) { %>
+                                <section class="card">
+                                    <a href="/colleges/<%= requiredColleges[i].index%>/view">
+                                        <div id="cardHeader" class="header1">
+                                            <%= requiredColleges[i].name %>
+                                        </div>
+                                        <img src="<%= requiredColleges[i].photo %>" alt="No photo exists!">
+                                        <footer class="container">
+                                            <%= requiredColleges[i].country %>
+                                        </footer>
+                                    </a>
+                                </section>
+                                <% } %>
+                                    <% } %>
+                </main>
+        </div>
+
+        <%- include('../partials/navbar-script') %>
+            <%- include('../partials/contact-window') %>
+    </body>
+
+</html>

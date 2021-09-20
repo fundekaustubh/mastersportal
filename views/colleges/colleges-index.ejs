@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MastersPortal</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <%- include('../partials/navbar-styles') %>
+        <style>
+            #pageHeader {
+                text-align: center;
+                margin-bottom: 30px;
+            }
+
+            /* .bg {
+                background-color: blue;
+            } */
+
+            .page-container {
+                display: flex;
+                justify-content: space-evenly;
+                width: 100%;
+            }
+
+            .header3 {
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+
+            .button-container {
+                margin-top: 20px;
+            }
+        </style>
+</head>
+<%- include('../partials/form') %>
+
+    <body>
+        <div class="page-container">
+            <%- include('../partials/navbar') %>
+                <main class="main">
+                    <div id="pageHeader">
+                        Here, you can select colleges according to your preferences.
+                    </div>
+                    <div class="page-container">
+                        <form action="/colleges/ms" method="POST" class="form-container">
+                            <div class="header3">
+                                MS COURSES
+                            </div>
+                            <% for( let course of all_ms_courses) { %>
+                                <div>
+                                    <input type="radio" name="selected_ms_course" id="<%= course %>"
+                                        value="<%=course%>">
+                                    <label for="<%= course %>">
+                                        <%= course %>
+                                    </label>
+                                </div>
+                                <% } %>
+                                    <div class="header3">
+                                        COUNTRY
+                                    </div>
+                                    <select name="selected_country" id="selected_country">
+                                        <option value="any">Any</option>
+                                        <% for( let country of countries ) { %>
+                                            <option value="<%= country %>">
+                                                <%= country %>
+                                            </option>
+                                            <% } %>
+                                    </select>
+                                    <div class="header3">
+                                        MAXIMUM COST
+                                    </div>
+                                    <select name="selected_max_cost" id="selected_max_cost">
+                                        <option value="any">Any</option>
+                                        <% for( let i=45000; i<=60000; i+=5000 ) { %>
+                                            <option value="<%= i %>">
+                                                <%= i %>
+                                            </option>
+                                            <% } %>
+                                    </select>
+                                    <div class="button-container">
+                                        <button type="submit">Submit</button>
+                                        <button type="reset">Reset</button>
+                                    </div>
+
+                        </form>
+                        <form action="/colleges/mba" method="POST" class="form-container">
+                            <div class="header3">
+                                MBA COURSES
+                            </div>
+                            <% for( let course of all_mba_courses) { %>
+                                <div>
+                                    <input type="radio" name="selected_mba_course" id="<%= course %>"
+                                        value="<%=course%>">
+                                    <label for="<%= course %>">
+                                        <%= course %>
+                                    </label>
+                                </div>
+                                <% } %>
+                                    <div class="header3">
+                                        COUNTRY
+                                    </div>
+                                    <select name="selected_country" id="selected_country">
+                                        <option value="any">Any</option>
+                                        <% for( let country of countries ) { %>
+                                            <option value="<%= country %>">
+                                                <%= country %>
+                                            </option>
+                                            <% } %>
+                                    </select>
+                                    <div class="header3">
+                                        MAXIMUM COST
+                                    </div>
+                                    <select name="selected_max_cost" id="selected_max_cost">
+                                        <option value="any">Any</option>
+                                        <% for( let i=45000; i<=60000; i+=5000 ) { %>
+                                            <option value="<%= i %>">
+                                                <%= i %>
+                                            </option>
+                                            <% } %>
+                                    </select>
+                                    <div class="button-container">
+                                        <button type="submit">Submit</button>
+                                        <button type="reset">Reset</button>
+                                    </div>
+
+                        </form>
+                        <form action="/colleges/other" method="POST" class="form-container">
+                            <div class="header3">
+                                OTHER COURSES
+                            </div>
+                            <% for( let course of all_other_courses) { %>
+                                <div>
+                                    <input type="radio" name="selected_other_course" id="<%= course %>"
+                                        value="<%=course%>">
+                                    <label for="<%= course %>">
+                                        <%= course %>
+                                    </label>
+                                </div>
+                                <% } %>
+                                    <div class="header3">
+                                        COUNTRY
+                                    </div>
+                                    <select name="selected_country" id="selected_country">
+                                        <option value="any">Any</option>
+                                        <% for( let country of countries ) { %>
+                                            <option value="<%= country %>">
+                                                <%= country %>
+                                            </option>
+                                            <% } %>
+                                    </select>
+                                    <div class="header3">
+                                        MAXIMUM COST
+                                    </div>
+                                    <select name="selected_max_cost" id="selected_max_cost">
+                                        <option value="any">Any</option>
+                                        <% for( let i=45000; i<=60000; i+=5000 ) { %>
+                                            <option value="<%= i %>">
+                                                <%= i %>
+                                            </option>
+                                            <% } %>
+                                    </select>
+                                    <div class="button-container">
+                                        <button type="submit">Submit</button>
+                                        <button type="reset">Reset</button>
+                                    </div>
+
+                        </form>
+                    </div>
+                </main>
+        </div>
+
+        <%- include('../partials/navbar-script') %>
+            <%- include('../partials/contact-window') %>
+    </body>
+
+</html>

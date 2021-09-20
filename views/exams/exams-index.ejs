@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MastersPortal</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <%- include('../partials/navbar-styles') %>
+        <style>
+            #pageHeader {
+                text-align: center;
+                margin-bottom: 30px;
+            }
+
+            .page-container {
+                display: flex;
+                justify-content: space-evenly;
+                width: 100%;
+            }
+
+            .exam {
+                padding: 10px;
+                background-color: #e2e2e2;
+                border-radius: 10px;
+                height: max-content;
+            }
+
+            .exam-header {
+                width: 100%;
+                text-align: center;
+            }
+
+            li {
+                text-align: left;
+                margin-bottom: 10px;
+            }
+
+            .exam-links {
+                color: #426cc9;
+                text-decoration: none;
+            }
+
+            .exam-links:hover {
+                text-decoration: underline dotted#426cc9;
+            }
+
+            /* li:hover {} */
+        </style>
+</head>
+<%- include('../partials/form') %>
+
+    <body>
+        <div class="page-container">
+            <%- include('../partials/navbar') %>
+                <main class="main">
+                    <div id="pageHeader">
+                        HERE ARE THE VARIOUS EXAMS THAT COLLEGES USE FOR ADMISSIONS.
+                    </div>
+                    <div class="page-container">
+                        <div class="exam">
+                            <div class="exam-header">GRE</div>
+                            <ul>
+                                <li><a href="#" class="exam-links">Overview</a></li>
+                                <li><a href="#" class="exam-links">Syllabus</a></li>
+                                <li><a href="#" class="exam-links">Dates</a></li>
+                                <li><a href="#" class="exam-links">Practice Papers</a></li>
+                                <li><a href="#" class="exam-links">Registration</a></li>
+                                <li><a href="#" class="exam-links">Preparation Strategies</a></li>
+                            </ul>
+                        </div>
+                        <div class="exam">
+                            <div class="exam-header">TOEFL</div>
+                            <ul>
+                                <li><a href="#" class="exam-links">Overview</a></li>
+                                <li><a href="#" class="exam-links">Syllabus</a></li>
+                                <li><a href="#" class="exam-links">Dates</a></li>
+                                <li><a href="#" class="exam-links">Practice Papers</a></li>
+                                <li><a href="#" class="exam-links">Registration</a></li>
+                                <li><a href="#" class="exam-links">Preparation Strategies</a></li>
+                            </ul>
+                        </div>
+                        <div class="exam">
+                            <div class="exam-header">GMAT</div>
+                            <ul>
+                                <li><a href="#" class="exam-links">Overview</a></li>
+                                <li><a href="#" class="exam-links">Syllabus</a></li>
+                                <li><a href="#" class="exam-links">Dates</a></li>
+                                <li><a href="#" class="exam-links">Practice Papers</a></li>
+                                <li><a href="#" class="exam-links">Registration</a></li>
+                                <li><a href="#" class="exam-links">Preparation Strategies</a></li>
+                            </ul>
+                        </div>
+                        <div class="exam">
+                            <div class="exam-header">IELTS</div>
+                            <ul>
+                                <li><a href="#" class="exam-links">Overview</a></li>
+                                <li><a href="#" class="exam-links">Syllabus</a></li>
+                                <li><a href="#" class="exam-links">Dates</a></li>
+                                <li><a href="#" class="exam-links">Practice Papers</a></li>
+                                <li><a href="#" class="exam-links">Registration</a></li>
+                                <li><a href="#" class="exam-links">Preparation Strategies</a></li>
+                            </ul>
+                        </div>
+                        <div class="exam">
+                            <div class="exam-header">PTE</div>
+                            <ul>
+                                <li><a href="#" class="exam-links">Overview</a></li>
+                                <li><a href="#" class="exam-links">Syllabus</a></li>
+                                <li><a href="#" class="exam-links">Dates</a></li>
+                                <li><a href="#" class="exam-links">Practice Papers</a></li>
+                                <li><a href="#" class="exam-links">Registration</a></li>
+                                <li><a href="#" class="exam-links">Preparation Strategies</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </main>
+        </div>
+
+        <%- include('../partials/navbar-script') %>
+            <%- include('../partials/contact-window') %>
+    </body>
+
+</html>
